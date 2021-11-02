@@ -1,8 +1,8 @@
-import { inject, injectable } from "tsyringe";
+import { inject, injectable } from 'tsyringe';
 
-import { IUsersRepository } from "../../../users/repositories/IUsersRepository";
-import { IStatementsRepository } from "../../repositories/IStatementsRepository";
-import { GetStatementOperationError } from "./GetStatementOperationError";
+import { IUsersRepository } from '../../../users/repositories/IUsersRepository';
+import { IStatementsRepository } from '../../repositories/IStatementsRepository';
+import { GetStatementOperationError } from './GetStatementOperationError';
 
 interface IRequest {
   user_id: string;
@@ -22,17 +22,20 @@ export class GetStatementOperationUseCase {
   async execute({ user_id, statement_id }: IRequest) {
     const user = await this.usersRepository.findById(user_id);
 
-    if(!user) {
+    if (!user) {
       throw new GetStatementOperationError.UserNotFound();
     }
 
-    const statementOperation = await this.statementsRepository
-      .findStatementOperation({ user_id, statement_id });
+    const statementOperation =
+      await this.statementsRepository.findStatementOperation({
+        user_id,
+        statement_id,
+      });
 
-      if(!statementOperation) {
-        throw new GetStatementOperationError.StatementNotFound();
-      }
+    if (!statementOperation) {
+      throw new GetStatementOperationError.StatementNotFound();
+    }
 
-      return statementOperation;
+    return statementOperation;
   }
 }

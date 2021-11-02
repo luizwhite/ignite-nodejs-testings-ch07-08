@@ -12,7 +12,7 @@ export class CreateUserController {
     await createUser.execute({
       name,
       email,
-      password
+      password,
     });
 
     return response.status(201).send();

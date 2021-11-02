@@ -1,4 +1,5 @@
-import { AppError } from "../../../../shared/errors/AppError";
+/* eslint-disable max-classes-per-file */
+import { AppError } from '../../../../shared/errors/AppError';
 
 export namespace CreateStatementError {
   export class UserNotFound extends AppError {

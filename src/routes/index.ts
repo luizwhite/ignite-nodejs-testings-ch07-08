@@ -1,9 +1,9 @@
 import { Router } from 'express';
 
 import { authenticationRouter } from './authentication.routes';
-import { usersRouter } from './users.routes';
-import { userProfileRouter } from './userProfile.routes';
 import { statementRouter } from './statements.routes';
+import { userProfileRouter } from './userProfile.routes';
+import { usersRouter } from './users.routes';
 
 const router = Router();
 

@@ -16,7 +16,12 @@
   "plugins": ["eslint-plugin-import-helpers"],
   "rules": {
     "camelcase": "off",
-    "import/no-unresolved": "error",
+    "class-methods-use-this": "off",
+    "lines-between-class-members": "warn",
+    "no-shadow": "off",
+    "no-console": "off",
+    "no-useless-constructor": "off",
+    "no-empty-function": "off",
     "@typescript-eslint/no-unused-vars": [
       "error",
       {
@@ -34,13 +39,10 @@
         }
       }
     ],
-    "class-methods-use-this": "off",
+    "@typescript-eslint/no-shadow": ["error"],
+    "@typescript-eslint/no-namespace": "off",
+    "import/no-unresolved": "error",
     "import/prefer-default-export": "off",
-    "no-shadow": "error",
-    "no-console": "off",
-    "no-useless-constructor": "off",
-    "no-empty-function": "off",
-    "lines-between-class-members": "warn",
     "import/extensions": [
       "error",
       "ignorePackages",

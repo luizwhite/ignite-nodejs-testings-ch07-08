@@ -4,7 +4,7 @@ import {
   Entity,
   JoinColumn,
   ManyToOne,
-  PrimaryGeneratedColumn
+  PrimaryGeneratedColumn,
 } from 'typeorm';
 import { v4 as uuid } from 'uuid';
 
@@ -23,7 +23,7 @@ export class Statement {
   @Column('uuid')
   user_id: string;
 
-  @ManyToOne(() => User, user => user.statement)
+  @ManyToOne(() => User, (user) => user.statement)
   @JoinColumn({ name: 'user_id' })
   user: User;
 
