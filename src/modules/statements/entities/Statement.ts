@@ -6,11 +6,11 @@ import {
   ManyToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
-import { v4 as uuid } from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 
 import { User } from '../../users/entities/User';
 
-enum OperationType {
+export enum OperationType {
   DEPOSIT = 'deposit',
   WITHDRAW = 'withdraw',
 }
@@ -18,7 +18,7 @@ enum OperationType {
 @Entity('statements')
 export class Statement {
   @PrimaryGeneratedColumn('uuid')
-  id?: string;
+  id: string = uuidv4();
 
   @Column('uuid')
   user_id: string;
@@ -41,10 +41,4 @@ export class Statement {
 
   @CreateDateColumn()
   updated_at: Date;
-
-  constructor() {
-    if (!this.id) {
-      this.id = uuid();
-    }
-  }
 }
