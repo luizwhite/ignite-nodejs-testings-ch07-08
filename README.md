@@ -1,4 +1,4 @@
-## Ignite NodeJS - Challenge 07
+## Ignite NodeJS - Challenge 07 and Challenge 08
 
 ### Unit Testing
 - POST "/api/v1/users"
@@ -24,3 +24,12 @@
   - [x] should be able to withdraw an amount
   - [x] should not be able to create a statement for a non-existent user
   - [x] should not be able to create a withdraw statement with insufficient funds
+
+### Integration Testing
+- POST "/api/v1/users"
+- POST "/api/v1/sessions"
+- GET "/api/v1/profile"
+- GET "/api/v1/statements/balance"
+- GET "/api/v1/statements/:statement_id"
+- POST "/api/v1/statements/deposit"
+- POST "/api/v1/statements/withdraw"
